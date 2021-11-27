@@ -1,0 +1,57 @@
+{
+  "name": "@ksm2/jest-marbles",
+  "version": "1.0.0-dev",
+  "description": "Jest extension to test WHATWG Streams with marble syntax",
+  "main": "./lib/index.js",
+  "type": "module",
+  "scripts": {
+    "build": "tsc --project tsconfig.build.json",
+    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js --no-cache",
+    "prettier": "prettier --check src/*.ts README.md CODE_OF_CONDUCT.md",
+    "prettier:fix": "prettier --write src/*.ts README.md CODE_OF_CONDUCT.md"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ksm2/jest-marbles.git"
+  },
+  "keywords": [
+    "streams",
+    "web-streams",
+    "whatwg",
+    "jest",
+    "marbles"
+  ],
+  "author": {
+    "name": "Konstantin Möllers",
+    "email": "ksm.moellers@gmail.com"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ksm2/jest-marbles/issues"
+  },
+  "homepage": "https://github.com/ksm2/jest-marbles#readme",
+  "dependencies": {
+    "isomorphic-streams": "^1.0.2"
+  },
+  "peerDependencies": {
+    "@types/jest": "*",
+    "jest": "*"
+  },
+  "devDependencies": {
+    "@types/jest": "^27.0.3",
+    "@types/node": "^16.11.10",
+    "jest": "^27.3.1",
+    "prettier": "^2.5.0",
+    "ts-jest": "^27.0.7",
+    "typescript": "^4.5.2"
+  },
+  "prettier": {
+    "printWidth": 120,
+    "trailingComma": "all"
+  },
+  "files": [
+    "lib",
+    "LICENSE",
+    "README.md"
+  ]
+}
