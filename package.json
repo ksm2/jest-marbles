@@ -1,6 +1,6 @@
 {
   "name": "@ksm2/jest-marbles",
-  "version": "1.0.0-dev",
+  "version": "1.0.0",
   "description": "Jest extension to test WHATWG Streams with marble syntax",
   "main": "./lib/index.js",
   "type": "module",
