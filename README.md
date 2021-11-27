@@ -1,5 +1,10 @@
 # jest-stream-marbles
 
+[![Node.js CI](https://github.com/ksm2/jest-stream-marbles/actions/workflows/node.js.yml/badge.svg)](https://github.com/ksm2/jest-stream-marbles/actions/workflows/node.js.yml)
+[![NPM version](https://img.shields.io/npm/v/jest-stream-marbles)](https://www.npmjs.com/package/jest-stream-marbles)
+[![license](https://img.shields.io/github/license/ksm2/jest-stream-marbles)](https://opensource.org/licenses/MIT)
+![TypeScript types](https://img.shields.io/npm/types/jest-stream-marbles)
+
 > Jest extension to test [WHATWG Streams] with [Marble Syntax]
 
 ## Table of Contents
@@ -51,7 +56,7 @@ function isEven(num: number): boolean {
 
 ## Contributing
 
-This project is open to feedback and contributions, [please open an issue](https://github.com/ksm2/jest-marbles/issues).
+This project is open to feedback and contributions, [please open an issue](https://github.com/ksm2/jest-stream-marbles/issues).
 
 `jest-stream-marbles` follows the [Contributor Covenant] Code of Conduct.
 
@@ -68,5 +73,5 @@ MIT © 2021 Konstantin Möllers, see [LICENSE].
 
 [whatwg streams]: https://streams.spec.whatwg.org/
 [marble syntax]: https://rxjs.dev/guide/testing/marble-testing
-[license]: https://github.com/ksm2/jest-marbles/blob/main/LICENSE
-[contributor covenant]: https://github.com/ksm2/jest-marbles/blob/main/CODE_OF_CONDUCT.md
+[license]: https://github.com/ksm2/jest-stream-marbles/blob/main/LICENSE
+[contributor covenant]: https://github.com/ksm2/jest-stream-marbles/blob/main/CODE_OF_CONDUCT.md
