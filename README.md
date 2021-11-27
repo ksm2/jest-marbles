@@ -1,4 +1,4 @@
-# @ksm2/jest-marbles
+# jest-stream-marbles
 
 > Jest extension to test [WHATWG Streams] with [Marble Syntax]
 
@@ -14,19 +14,19 @@
 
 Use either
 
-    yarn add @ksm2/jest-marbles
+    yarn add jest-stream-marbles
 
 or
 
-    npm install @ksm2/jest-marbles
+    npm install jest-stream-marbles
 
 ## Usage
 
 This module allows you to test [WHATWG Streams] with [Marble Syntax] in Jest.
 
 ```js
-import { marbles } from "@ksm2/jest-marbles";
-import { filter } from "@ksm2/stream-transformers";
+import { marbles } from "jest-stream-marbles";
+import { filter } from "stream-transformers";
 
 describe("filter", () => {
   it("should filter a stream by a predicate", async () => {
@@ -53,14 +53,14 @@ function isEven(num: number): boolean {
 
 This project is open to feedback and contributions, [please open an issue](https://github.com/ksm2/jest-marbles/issues).
 
-`@ksm2/jest-marbles` follows the [Contributor Covenant] Code of Conduct.
+`jest-stream-marbles` follows the [Contributor Covenant] Code of Conduct.
 
 ## See Also
 
 Also have a look at the following NPM Packages:
 
 - [isomorphic-streams](https://github.com/ksm2/isomorphic-streams) - Isomorphic package for WHATWG Streams in Node.js and the browser.
-- [@ksm2/stream-transformers](https://github.com/ksm2/stream-transformers) - Reusable stream transformers similar to ReactiveX Operators.
+- [stream-transformers](https://github.com/ksm2/stream-transformers) - Reusable stream transformers similar to ReactiveX Operators.
 
 ## License
 
