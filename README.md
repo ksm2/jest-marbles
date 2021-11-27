@@ -51,15 +51,15 @@ function isEven(num: number): boolean {
 
 ## Contributing
 
-This project is open to feedback and contributions, please open an issue.
+This project is open to feedback and contributions, [please open an issue](https://github.com/ksm2/jest-marbles/issues).
 
-`isomorphic-streams` follows the [Contributor Covenant] Code of Conduct.
+`@ksm2/jest-marbles` follows the [Contributor Covenant] Code of Conduct.
 
 ## See Also
 
 Also have a look at the following NPM Packages:
 
-- [isomorphic-streams](https://github.com/ksm2/isomorphic-streams) - Isomorphic package for WHATWG Streams ins Node.js and the browser.
+- [isomorphic-streams](https://github.com/ksm2/isomorphic-streams) - Isomorphic package for WHATWG Streams in Node.js and the browser.
 - [@ksm2/stream-transformers](https://github.com/ksm2/stream-transformers) - Reusable stream transformers similar to ReactiveX Operators.
 
 ## License
