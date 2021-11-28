@@ -1,5 +1,5 @@
-import { streamsEqual } from "../streamsEqual";
-import { marbles } from "../marbles";
+import { marbles } from "../marbles.js";
+import { streamsEqual } from "../streamsEqual.js";
 
 describe("streamsEqual", () => {
   it("should return true for the same stream", async () => {

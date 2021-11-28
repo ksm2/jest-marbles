@@ -1,5 +1,5 @@
 import { jest } from "@jest/globals";
-import { Scheduler } from "../Scheduler";
+import { Scheduler } from "../Scheduler.js";
 
 describe("Scheduler", () => {
   let scheduler: Scheduler;

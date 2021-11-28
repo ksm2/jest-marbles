@@ -1,6 +1,6 @@
-import { ScheduledReadableStream } from "./ScheduledReadableStream";
-import { Scheduler } from "./Scheduler";
 import { ReadableStream } from "isomorphic-streams";
+import { ScheduledReadableStream } from "./ScheduledReadableStream.js";
+import { Scheduler } from "./Scheduler.js";
 
 export function marbles<T>(template: TemplateStringsArray, ...values: T[]): ScheduledReadableStream<T> {
   const [head, ...tail] = template;

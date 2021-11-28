@@ -1,5 +1,5 @@
-import { ScheduledReadableStream } from "./ScheduledReadableStream";
-import { Event, eventsEqual, EventType } from "./Event";
+import { Event, eventsEqual, EventType } from "./Event.js";
+import { ScheduledReadableStream } from "./ScheduledReadableStream.js";
 
 export async function streamsEqual<T>(
   actual: ScheduledReadableStream<T>,

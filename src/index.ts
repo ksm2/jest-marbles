@@ -1,6 +1,6 @@
-import { marbles } from "./marbles";
-import { streamsEqual } from "./streamsEqual";
-import { ScheduledReadableStream } from "./ScheduledReadableStream";
+import { marbles } from "./marbles.js";
+import { streamsEqual } from "./streamsEqual.js";
+import { ScheduledReadableStream } from "./ScheduledReadableStream.js";
 
 declare global {
   namespace jest {

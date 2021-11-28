@@ -1,5 +1,5 @@
-import { Scheduler } from "./Scheduler";
 import { ReadableStream, ReadableStreamDefaultReader, ReadableWritablePair } from "isomorphic-streams";
+import { Scheduler } from "./Scheduler.js";
 
 export class ScheduledReadableStream<R> implements AsyncIterable<R> {
   readonly #scheduler: Scheduler;

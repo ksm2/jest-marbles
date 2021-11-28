@@ -1,4 +1,4 @@
-import { Event, eventsEqual, EventType } from "../Event";
+import { Event, eventsEqual, EventType } from "../Event.js";
 
 describe("Event", () => {
   test("eventsEqual", () => {
