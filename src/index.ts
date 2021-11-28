@@ -1,6 +1,6 @@
-import { marbles } from "./marbles.js";
-import { streamsEqual } from "./streamsEqual.js";
+import { C, marbles, X } from "./marbles.js";
 import { ScheduledReadableStream } from "./ScheduledReadableStream.js";
+import { streamsEqual } from "./streamsEqual.js";
 
 declare global {
   namespace jest {
@@ -27,4 +27,4 @@ expect.extend({
   },
 });
 
-export { marbles };
+export { C, marbles, X };

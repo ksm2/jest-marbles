@@ -1,8 +1,14 @@
-import { ReadableStream } from "isomorphic-streams";
+import { ReadableStream, ReadableStreamDefaultController } from "isomorphic-streams";
 import { ScheduledReadableStream } from "./ScheduledReadableStream.js";
 import { Scheduler } from "./Scheduler.js";
 
-export function marbles<T>(template: TemplateStringsArray, ...values: T[]): ScheduledReadableStream<T> {
+export const C = Symbol("Close");
+export const X = Symbol("Error");
+
+type Value<T> = Terminal<T> | Array<Terminal<T>>;
+type Terminal<T> = T | typeof C | typeof X;
+
+export function marbles<T>(template: TemplateStringsArray, ...values: Array<Value<T>>): ScheduledReadableStream<T> {
   const [head, ...tail] = template;
   const scheduler = new Scheduler();
   const readableStream = new ReadableStream<T>({
@@ -10,7 +16,11 @@ export function marbles<T>(template: TemplateStringsArray, ...values: T[]): Sche
       let time = head.length;
       for (const [value, suffix] of zip(values, tail)) {
         scheduler.on(time, () => {
-          controller.enqueue(value);
+          if (Array.isArray(value)) {
+            value.forEach(apply(controller));
+          } else {
+            apply(controller)(value);
+          }
         });
         time += approxValueLength(value);
         time += suffix.length;
@@ -36,11 +46,30 @@ export function marbles<T>(template: TemplateStringsArray, ...values: T[]): Sche
   return new ScheduledReadableStream<T>(scheduler, readableStream);
 }
 
+function apply<T>(controller: ReadableStreamDefaultController<T>) {
+  return function (terminal: Terminal<T>) {
+    if (terminal === C) {
+      controller.close();
+    } else if (terminal === X) {
+      controller.error();
+    } else {
+      controller.enqueue(terminal);
+    }
+  };
+}
+
 function buildChain<T>([head, ...tail]: TemplateStringsArray, values: unknown[]): string {
   return [head, ...zip(values, tail).map(([value, suffix]) => "-".repeat(approxValueLength(value)) + suffix)].join("");
 }
 
-function approxValueLength(value: unknown): number {
+function approxValueLength(value: Value<any>): number {
+  if (Array.isArray(value)) {
+    return value.map((it) => approxValueLength(it)).reduce((a, b) => a + b + 2) + 5;
+  }
+
+  if (value === C || value === X) {
+    return 4;
+  }
   return JSON.stringify(value).length + 3;
 }
 
